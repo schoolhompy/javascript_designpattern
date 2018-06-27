@@ -25,7 +25,7 @@ searchCommand.prototype.sendFormToPublic = function() {
 function SearchPrivate(searching) {
     this.search = searching;
 }
-SearchPrivateCommand.prototype.goSearch = function() {
+SearchPrivate.prototype.goSearch = function() {
     this.search.sendFormPrivate();
 }
 
@@ -33,7 +33,7 @@ SearchPrivateCommand.prototype.goSearch = function() {
 function SearchGoogle(searching) {
     this.search = searching;
 }
-SearchGoogleCommand.prototype.goSearch = function() {
+SearchGoogle.prototype.goSearch = function() {
     this.search.sendFormToPublic();
 }
 
