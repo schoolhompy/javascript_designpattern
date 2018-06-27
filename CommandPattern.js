@@ -22,7 +22,7 @@ searchCommand.prototype.sendFormToPublic = function() {
 };
 
 
-function SearchPrivateCommand(searching) {
+function SearchPrivate(searching) {
     this.search = searching;
 }
 SearchPrivateCommand.prototype.goSearch = function() {
@@ -30,7 +30,7 @@ SearchPrivateCommand.prototype.goSearch = function() {
 }
 
 
-function SearchGoogleCommand(searching) {
+function SearchGoogle(searching) {
     this.search = searching;
 }
 SearchGoogleCommand.prototype.goSearch = function() {
@@ -38,11 +38,11 @@ SearchGoogleCommand.prototype.goSearch = function() {
 }
 
 var searchcommand = new searchCommand();
-var sprivate = new SearchPrivateCommand(searchcommand);
+var sprivate = new SearchPrivate(searchcommand);
 var gosearch = new GoSearch(sprivate);
 gosearch.runSearchCommand();
 
-var spublic = new SearchGoogleCommand(searchcommand);
+var spublic = new SearchGoogle(searchcommand);
 gosearch.setSearchTarget(spublic);
 gosearch.runSearchCommand();
 
